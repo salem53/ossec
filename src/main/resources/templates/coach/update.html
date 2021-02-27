@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Coach</title>
+</head>
+<body>
+	<h3 align="center">Mise à jour d'un Coach</h3>
+
+	<table border="1" align="center">
+		<form method="POST" th:action="@{/coach/update}"  th:object="${coach}">
+		
+		    <input type="hidden" th:field="*{id}"/>
+			<tr>
+			<td>Nom</td>
+			<td><input type="text" th:field="*{nom}"/></td>
+			</tr>
+			
+			
+			<tr>
+			<td>Email</td>
+			<td><input type="text"  th:field="*{email}"/></td>
+			</tr>
+			
+			
+			<tr>
+			<td>Age</td>
+			<td><input type="text"  th:field="*{age}"/></td>
+			</tr>
+			
+			
+			<tr>
+			<td><input type="reset" value="Annuler"/></td>
+			<td><input type="submit" value="Valider"/></td>
+			</tr>
+			
+			
+		</form>
+	</table>
+</body>
+</html>

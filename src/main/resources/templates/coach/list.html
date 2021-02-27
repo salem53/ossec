@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Coach</title>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+
+<a th:href="@{/coach/add}" class="btn btn-primary">Ajouter un coach</a>
+
+	<h2 align="center">List des Coach</h2>
+
+	<table class="table" align="center" border="1">
+		<tr>
+			<th>ID</th>
+			<th>Nom</th>
+			<th>Email</th>
+			<th>Age</th>
+			<th>Supprimer</th>
+			<th>Modifier</th>
+		</tr>
+		<tr th:each="coach : ${coaches}">
+		  <td th:text="${coach.id}"></td>
+		  <td th:text="${coach.nom}"></td>
+		  <td th:text="${coach.email}"></td>
+		  <td th:text="${coach.age}"></td>
+		  <td><a th:href="@{/coach/delete/{id} (id=${coach.id})}" class="btn btn-danger">Delete</a></td>
+		  <td><a th:href="@{/coach/update/{id} (id=${coach.id})}" class="btn btn-warning">Update</a></td>
+		</tr>
+
+	</table>
+</body>
+</html>
